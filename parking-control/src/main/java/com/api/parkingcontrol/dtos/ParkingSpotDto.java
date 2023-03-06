@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -23,9 +24,6 @@ public class ParkingSpotDto {
     private String brandCar;
     @NotBlank
     private String modelCar;
-
-    @NotBlank
-    private LocalDateTime registrationDate;
     @NotBlank
     private String colorCar;
     @NotBlank
@@ -41,7 +39,6 @@ public class ParkingSpotDto {
         this.licensePlateCar = parkingSpot.getLicensePlateCar();
         this.brandCar = parkingSpot.getBrandCar();
         this.modelCar = parkingSpot.getModelCar();
-        this.registrationDate = parkingSpot.getRegistrationDate();
         this.colorCar = parkingSpot.getColorCar();
         this.reponsibleName = parkingSpot.getReponsibleName();
         this.apartment = parkingSpot.getApartment();

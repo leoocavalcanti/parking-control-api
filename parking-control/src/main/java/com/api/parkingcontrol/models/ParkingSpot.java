@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -16,9 +17,9 @@ import java.util.UUID;
 public class ParkingSpot implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private UUID id;
+    private Long id;
 
     @Column(nullable = false, unique = true, length = 10)
     private String parkingSpotNumber;
@@ -36,7 +37,7 @@ public class ParkingSpot implements Serializable {
     private String colorCar;
 
     @Column(nullable = false)
-    private LocalDateTime registrationDate;
+    private LocalDate registrationDate;
 
     @Column(nullable = false, length = 130)
     private String reponsibleName;
